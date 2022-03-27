@@ -24,13 +24,84 @@
 .CrimePage_Form{
     height: 300px;
     width: 100%;
-    border: 1px solid #000;
 }
 .cp_title{
     font-size: 19px;
     font-weight: 500;
     color: #000;
 }
-.cp span{
+.cp_title span{
     color: #FF2365;
+}
+.CrimePage_Form textarea{
+    height: 200px;
+    width: 100%;
+    background-color: #f9f9f9;
+    border-radius: 7px;
+    font-size: 17px;
+    font-family: sans-serif;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid rgb(180, 180, 180);
+}
+.CrimePage_Form textarea:focus{
+    outline: 1px solid #FF2365;
+}
+.uploadphoto_div{
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.upload_photoButton{
+    height: 45px;
+    width: 100%;
+    border-radius: 7px;
+    border: 1px solid #b8b8b8;
+    cursor: pointer;
+}
+.post_update_button{
+    height: 45px;
+    width: 100%;
+    border-radius: 7px;
+    background-color: #FF2365;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
+.CrimePost{
+    height: 200px;
+    width: 550px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+.CrimePost_header{
+    padding: 10px 0 ;
+    width: 100%;
+    border-bottom: 1.5px solid #dddddd;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.CrimePost_header p{
+    font-size: 17px;
+    font-weight: 500px;
+    color: #000;
+    margin: 0;
+}
+.cph_s{
+    height: 20px;
+    width: 3px;
+    background-color: #FF2365;
+    margin-right: 15px;
+    margin-left: 15px;
 }
