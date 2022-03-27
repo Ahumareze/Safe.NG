@@ -73,7 +73,6 @@
     font-weight: 500;
 }
 .CrimePost{
-    height: 200px;
     width: 550px;
     border: 1px solid #dddddd;
     border-radius: 10px;
@@ -104,4 +103,27 @@
     background-color: #FF2365;
     margin-right: 15px;
     margin-left: 15px;
+}
+.CrimePost_container{
+    width: 100%;
+    padding: 10px 0;
+}
+.CrimePost_container p{
+    font-size: 16px;
+    color: #000;
+    margin: 0;
+}
+.CrimePost_bottom{
+    height: 40px;
+    width: 100%;
+    border: 1px solid #000;
+}
+.readMore_button{
+    border: 1px solid #000;
+    width: fit-content;
+}
+.readMore_button p{
+    margin: 0;
+    font-weight: 500;
+    color: #FF2365;
 }
