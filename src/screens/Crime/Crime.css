@@ -1,5 +1,36 @@
 .CrimePage{
     height: 100vh;
     width: 100vw;
-    background-color: cadetblue;
+    background-color: #f9f9f9;
+}
+.CrimePage section{
+    height: 90vh;
+    width: 100vw;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 450px;
+}
+.cp_d1{
+    height: 100%;
+    width: 100%;
+}
+.cp_d2{
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+.CrimePage_Form{
+    height: 300px;
+    width: 100%;
+    border: 1px solid #000;
+}
+.cp_title{
+    font-size: 19px;
+    font-weight: 500;
+    color: #000;
+}
+.cp span{
+    color: #FF2365;
 }
