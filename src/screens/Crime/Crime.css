@@ -13,6 +13,7 @@
 .cp_d1{
     height: 100%;
     width: 100%;
+    overflow-y: scroll;
 }
 .cp_d2{
     height: 100%;
@@ -57,6 +58,15 @@
     border-radius: 7px;
     border: 1px solid #b8b8b8;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.upload_photoButton p{
+    font-size: 17px;
+    color: #000;
+    font-weight: 500;
+    padding-left: 10px;
 }
 .post_update_button{
     height: 45px;
@@ -69,7 +79,7 @@
     align-items: center;
     justify-content: center;
     color: #fff;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
 }
 .CrimePost{
@@ -107,23 +117,67 @@
 .CrimePost_container{
     width: 100%;
     padding: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr 200px;
 }
 .CrimePost_container p{
     font-size: 16px;
     color: #000;
     margin: 0;
+    padding-right: 20px;
+}
+.CrimePost_container .cc_img{
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #f9f9f9;
 }
 .CrimePost_bottom{
-    height: 40px;
+    padding-bottom: 10px;
     width: 100%;
-    border: 1px solid #000;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
 }
 .readMore_button{
-    border: 1px solid #000;
     width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
 }
 .readMore_button p{
     margin: 0;
     font-weight: 500;
     color: #FF2365;
+}
+.readmore_icon{
+    padding-top: 4px;
+}
+.vote_container{
+    height: 30px;
+    width: fit-content;
+    padding: 0 15px;
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.rmb_div{
+    display: grid;
+    justify-content: flex-end;
+}
+.vote_container_icon{
+    padding-right: 10px;
+    color: rgb(124, 124, 124);
+}
+.vote_container p{
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(124, 124, 124);
 }

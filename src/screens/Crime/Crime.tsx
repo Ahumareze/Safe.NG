@@ -12,6 +12,8 @@ function Crime() {
             <section>
                 <div className='cp_d1'>
                     <CrimePost />
+                    <CrimePost />
+                    <CrimePost />
                 </div>
                 <div className='cp_d2'>
                     <Form />
