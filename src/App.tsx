@@ -2,11 +2,11 @@ import React from 'react';
 import './App.css';
 
 //Imported Screens
-import { Home } from './screens';
+import { Home, Crime } from './screens';
 
 function App() {
   return (
-    <Home />
+    <Crime />
   );
 }
 
