@@ -83,6 +83,7 @@
     font-weight: 500;
 }
 .CrimePost{
+    max-height: 200px;
     width: 550px;
     border: 1px solid #dddddd;
     border-radius: 10px;
@@ -92,9 +93,11 @@
     margin-top: 20px;
     padding: 0 15px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 .readMore{
-    background-color: red;
+    max-height: 5000px;
+    transition: max-height 0.25s ease-in;
 }
 .CrimePost_header{
     padding: 10px 0 ;
@@ -117,19 +120,22 @@
     margin-right: 15px;
     margin-left: 15px;
 }
-.CrimePost_container{
+.readMore .CrimePost_container{
     width: 100%;
     padding: 10px 0;
     display: grid;
     grid-template-columns: 1fr 200px;
 }
-.CrimePost_container p{
+.readMore .CrimePost_container p{
     font-size: 16px;
     color: #000;
     margin: 0;
     padding-right: 20px;
 }
 .CrimePost_container .cc_img{
+    display: none;
+}
+.readMore .CrimePost_container .cc_img{
     height: 200px;
     width: 200px;
     border-radius: 10px;
@@ -137,6 +143,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #f9f9f9;
+    display: block;
 }
 .CrimePost_bottom{
     padding-bottom: 10px;
