@@ -29,6 +29,25 @@ const fetchCrimes = (location: string) => {
     }
 };
 
+const postCrime = (image: object | undefined, content: string) => {
+    return (dispatch: any) => {
+        if(!content){
+            dispatch(setErrorMessage('please fill out the description of the crime'))
+        }else if(content.length < 20){
+            dispatch(setErrorMessage('description too short'))
+        }else{
+            console.log(image,content)
+        }
+    }
+}
+
+const setErrorMessage = (value: string) => {
+    return{
+        type: actionTypes.SETERRORMESSAGE,
+        value
+    }
+}
+
 const setCrimes = (value: Array<any>) => {
     return{
         type: actionTypes.SETCRIMES,
@@ -45,5 +64,6 @@ const setLoading = (value: boolean) => {
 
 export {
     fetchCrimes,
-    init
+    init,
+    postCrime
 }

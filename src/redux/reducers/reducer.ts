@@ -3,7 +3,8 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState = {
     safeId: null,
     crimes: [],
-    loading: false
+    loading: false,
+    errorMessage: null
 };
 
 const reducer = (state = initialState, action: any) => {
@@ -13,7 +14,9 @@ const reducer = (state = initialState, action: any) => {
         case actionTypes.SETCRIMES:
             return {...state, crimes: action.value};
         case actionTypes.SETLOADING:
-            return {...state, loading: action.value}
+            return {...state, loading: action.value};
+        case actionTypes.SETERRORMESSAGE:
+            return {...state, errorMessage: action.value}
     }
     return state
 }

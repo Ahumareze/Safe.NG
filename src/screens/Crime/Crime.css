@@ -52,7 +52,7 @@
 }
 .uploadphoto_div{
     padding-top: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
 }
 .upload_photoButton{
     height: 45px;
@@ -93,6 +93,7 @@
 .post_update_button{
     height: 45px;
     width: 100%;
+    margin-top: 15px;
     border-radius: 7px;
     background-color: #FF2365;
     cursor: pointer;
@@ -227,4 +228,80 @@
     0%{transform: scale(0);}
     50%{transform: scale(2);}
     100%{transform: scale(1);}
+}
+.errorMessage{
+    color: red;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* location div styles */
+.LocationDiv{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.Location_div{
+    border-radius: 10px;
+    width: 400px;
+    background-color: #fff;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 120px;
+    padding: 15px 15px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    animation: slideIn 0.8s ease forwards;
+}
+@keyframes slideIn {
+    0%{transform: translateY(-400px);}
+    100%{transform: translateY(0);}
+}
+.Location_div_top{
+    width: 100%;
+}
+.Location_div_top p{
+    font-size: 30px;
+    font-weight: 500;
+    margin: 7px 0px;
+}
+.Location_div_input{
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.Location_pin{
+    padding-right: 10px;
+}
+select{
+    flex: 1;
+    height: 40px;
+    background-color: #f0f0f0;
+    border-radius: 7px;
+    border: none;
+    padding: 0 10px;
+    font-size: 17px;
+    outline: none;
+}
+section:focus{
+    border: 2px solid #FF2365;
+}
+.LocationUpdateButton{
+    height: 40px;
+    width: 100%;
+    background-color: #FF2365;
+    border-radius: 7px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 40px;
 }

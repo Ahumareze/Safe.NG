@@ -6,6 +6,7 @@ import Form from './components/Form';
 import CrimePost from './components/CrimePost';
 
 import * as actions from '../../redux/actions';
+import Location from './components/Location';
 
 const img = require('../../assets/img.jfif');
 
@@ -48,6 +49,7 @@ function Crime(props: any) {
                     <Form />
                 </div>
             </section>
+            <Location />
         </div>
     );
 }
