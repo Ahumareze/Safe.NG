@@ -49,7 +49,8 @@ function Crime(props: any) {
                     <Form />
                 </div>
             </section>
-            <Location />
+            
+            {/* <Location /> */}
         </div>
     );
 }

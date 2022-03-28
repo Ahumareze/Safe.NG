@@ -12,7 +12,23 @@ const init = () => {
             dispatch(setSafeId(r))
         }
     }
-}
+};
+
+const getLocation = () => {
+    return(dispatch: any) => {
+        const location = localStorage.getItem('@safeLocation');
+        if(location){
+
+        }
+    }
+};
+
+const setLocation = (value: string) => {
+    return{
+        type: actionTypes.SETLOCATION,
+        value
+    }
+};
 
 const setSafeId = (value: string) => {
     return{
