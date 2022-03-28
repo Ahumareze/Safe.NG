@@ -27,6 +27,18 @@ const getLocation = () => {
     }
 };
 
+const updateLocation = (location: string) => {
+    return(dispatch: any) => {
+        dispatch(changeLocation(false));
+
+        //update localstorage location
+        localStorage.setItem('@safeLocation', location);
+        dispatch(setLocation(location));
+
+        dispatch(fetchCrimes(location))
+    }
+}
+
 const setLocation = (value: string) => {
     return{
         type: actionTypes.SETLOCATION,
@@ -39,20 +51,20 @@ const setSafeId = (value: string) => {
         type: actionTypes.SETSAFEID,
         value
     }
-}
+};
 
 const changeLocation = (value: boolean) => {
     return{
         type: actionTypes.CHANGELOACTION,
         value
     }
-}
+};
 
 const fetchCrimes = (location: string) => {
     return(dispatch: any) => {
-        // dispatch(setLoading(true));
+        dispatch(setLoading(true));
         dispatch(setCrimes(data));
-        // dispatch(setLoading(false));
+        dispatch(setLoading(false));
     }
 };
 
@@ -93,5 +105,6 @@ export {
     fetchCrimes,
     init,
     postCrime,
-    changeLocation
+    changeLocation,
+    updateLocation
 }

@@ -254,7 +254,7 @@
     padding: 15px 15px;
     padding-bottom: 20px;
     box-sizing: border-box;
-    animation: slideIn 0.8s ease forwards;
+    animation: slideIn 0.4s ease forwards;
 }
 @keyframes slideIn {
     0%{transform: translateY(-400px);}
