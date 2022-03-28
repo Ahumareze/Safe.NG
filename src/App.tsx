@@ -6,7 +6,7 @@ import { Home, Crime } from './screens';
 
 function App() {
   return (
-    <Crime />
+    <Home />
   );
 }
 

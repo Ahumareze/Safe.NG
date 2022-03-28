@@ -1,6 +1,7 @@
 import React from 'react';
-import { Header } from '../../components';
 import './Home.css';
+import Lottie from 'react-lottie';
+import { Header } from '../../components';
 
 const background = require('../../assets/background.png');
 
