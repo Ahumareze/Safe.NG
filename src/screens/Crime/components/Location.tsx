@@ -17,7 +17,6 @@ function Location() {
                     <MdLocationPin className='Location_pin' size={25} />
                     <select>
                         {states.map((i: string) => <option>{i}</option> )}
-                        <option>Lagos state</option>
                     </select>
                 </div>
                 <div className='LocationUpdateButton'>Update</div>
