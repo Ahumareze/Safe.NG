@@ -99,7 +99,7 @@
 }
 .readMore{
     max-height: 5000px;
-    transition: max-height 0.25s ease-in;
+    transition: max-height 1s ease-in;
 }
 .CrimePost_header{
     padding: 10px 0 ;
@@ -192,4 +192,19 @@
     font-size: 18px;
     font-weight: 500;
     color: rgb(124, 124, 124);
+}
+.liked{
+    background-color: #FF2365;
+}
+.liked p{
+    color: #fff;
+}
+.liked .vote_container_icon{
+    color: #fff;
+    animation: liked 1s ease forwards;
+}
+@keyframes liked {
+    0%{transform: scale(0);}
+    50%{transform: scale(2);}
+    100%{transform: scale(1);}
 }

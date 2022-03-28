@@ -18,7 +18,7 @@ function Home() {
       
     return (
         <div className='HomePage' style={{backgroundImage: `url(${background})`}}>
-            <Header />
+            <Header location={false} />
             <section>
                 <div className='SD1'>
                     <p className='sd_header'>Helping Nigerian citizens stay informed and <span>safe</span> </p>

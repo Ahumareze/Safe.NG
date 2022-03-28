@@ -41,3 +41,29 @@
     padding-left: 60px;
     cursor: pointer;
 }
+.Location{
+    height: 35px;
+    width: fit-content;
+    padding: 0 20px;
+    border-radius: 25px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #000;
+}
+.Location:hover{
+    background-color: #FF2365;
+    color: #fff;
+}
+.Location p{
+    margin: 0;
+    font-size: 17px;
+    font-weight: 500;
+}
+.LocationPin{
+    padding-right: 7px;
+    margin-top: 1px;
+}

@@ -3,18 +3,28 @@ import React, { FC, useState } from 'react';
 
 //Imported components
 import {FiChevronDown, FiChevronUp} from 'react-icons/fi';
-import { MdThumbUp } from 'react-icons/md';
+import LikeButton from './LikeButton';
+
 
 interface CrimePostProps{
     name: string,
     date: string,
     time: string,
     content: string,
-    img: any,
+    img: string,
 }
 
 const CrimePost:FC<CrimePostProps> = ({name, date, time, content, img}) => {
     const [readMore, setReadMore] = useState<string>();
+
+    let text;
+    if(readMore){
+        text = content
+    }else{
+        const length = 135;
+        const trimmedString = content.substring(0, length);
+        text = trimmedString + '...'
+    }
 
     const toggle = (e: string) => {
         if(readMore){
@@ -34,15 +44,12 @@ const CrimePost:FC<CrimePostProps> = ({name, date, time, content, img}) => {
             </div>
 
             <div className='CrimePost_container'>
-                <p>{content}</p>
+                <p>{text}</p>
                 <div className='cc_img' style={{backgroundImage: `url(${img})`}} />
             </div>
 
             <div className='CrimePost_bottom'>
-                <div className='vote_container'>
-                    <MdThumbUp className='vote_container_icon' />
-                    <p>20</p>
-                </div>
+                <LikeButton />
                 <div className='rmb_div'>
                     <div className='readMore_button' onClick={() => toggle('readMore')}>
                         {!readMore ? 
