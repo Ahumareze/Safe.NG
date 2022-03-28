@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {FiChevronDown} from 'react-icons/fi';
 import { MdThumbUp } from 'react-icons/md';
 const img = require('../../../assets/img.jfif');
 
 function CrimePost() {
-    console.log(img)
+    const [readMore, setReadMore] = useState<string>('');
+
     return (
-        <div className='CrimePost'>
+        <div className={`CrimePost ${readMore}`}>
 
             <div className='CrimePost_header'>
                 <p>Anounymous</p> <div className='cph_s' />
@@ -26,7 +27,7 @@ function CrimePost() {
                     <p>20</p>
                 </div>
                 <div className='rmb_div'>
-                    <div className='readMore_button'>
+                    <div className='readMore_button' onClick={() => setReadMore('readMore')}>
                         <p>Read more</p>
                         <FiChevronDown color='#FF2365' size={25} className='readmore_icon' />
                     </div>

@@ -93,6 +93,9 @@
     padding: 0 15px;
     box-sizing: border-box;
 }
+.readMore{
+    background-color: red;
+}
 .CrimePost_header{
     padding: 10px 0 ;
     width: 100%;
