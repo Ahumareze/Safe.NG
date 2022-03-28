@@ -4,7 +4,9 @@ const initialState = {
     safeId: null,
     crimes: [],
     loading: false,
-    errorMessage: null
+    errorMessage: null,
+    location: '',
+    changeLocation: false
 };
 
 const reducer = (state = initialState, action: any) => {
@@ -16,7 +18,11 @@ const reducer = (state = initialState, action: any) => {
         case actionTypes.SETLOADING:
             return {...state, loading: action.value};
         case actionTypes.SETERRORMESSAGE:
-            return {...state, errorMessage: action.value}
+            return {...state, errorMessage: action.value};
+        case actionTypes.SETLOCATION:
+            return {...state, location: action.value};
+        case actionTypes.CHANGELOACTION:
+            return {...state, changeLocation: action.value}
     }
     return state
 }

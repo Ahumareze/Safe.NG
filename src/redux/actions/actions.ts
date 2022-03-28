@@ -11,6 +11,7 @@ const init = () => {
             localStorage.setItem('@safeId', r);
             dispatch(setSafeId(r))
         }
+        dispatch(getLocation());
     }
 };
 
@@ -18,7 +19,10 @@ const getLocation = () => {
     return(dispatch: any) => {
         const location = localStorage.getItem('@safeLocation');
         if(location){
-
+            dispatch(setLocation(location))
+        }else{
+            localStorage.setItem('@safeLocation', 'Lagos');
+            dispatch(setLocation('Lagos'))
         }
     }
 };
@@ -33,6 +37,13 @@ const setLocation = (value: string) => {
 const setSafeId = (value: string) => {
     return{
         type: actionTypes.SETSAFEID,
+        value
+    }
+}
+
+const changeLocation = (value: boolean) => {
+    return{
+        type: actionTypes.CHANGELOACTION,
         value
     }
 }
@@ -81,5 +92,6 @@ const setLoading = (value: boolean) => {
 export {
     fetchCrimes,
     init,
-    postCrime
+    postCrime,
+    changeLocation
 }

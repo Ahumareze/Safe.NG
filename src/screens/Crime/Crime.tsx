@@ -14,9 +14,10 @@ function Crime(props: any) {
     const dispatch = useDispatch();
     const loading = useSelector((state: any) => state.loading);
     const crimes = useSelector((state: any) => state.crimes);
+    const location = useSelector((state: any) => state.location);
 
     useEffect(() => {
-        dispatch(actions.fetchCrimes('Lagos state'));
+        dispatch(actions.fetchCrimes(location));
     }, []);
 
     let view = (
