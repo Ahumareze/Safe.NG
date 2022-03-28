@@ -2,12 +2,13 @@ import React, {FC} from 'react';
 
 interface LinkProps{
     name: string,
-    active: boolean
+    active: boolean,
+    onClick: () => void
 }
 
-const Links:FC<LinkProps> = ({name, active}):JSX.Element => {
+const Links:FC<LinkProps> = ({name, active, onClick}):JSX.Element => {
     return (
-        <p className='HeaderLinks' style={active ? {color: '#FF2365'} : {}} >{name}</p>
+        <p onClick={() => onClick()} className='HeaderLinks' style={active ? {color: '#FF2365'} : {}} >{name}</p>
     );
 }
 

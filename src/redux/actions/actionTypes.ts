@@ -1,5 +1,9 @@
 const SETCRIMES = 'SETCRIMES';
+const SETLOADING = 'SETLOADING';
+const SETERROR  = 'SETERROR';
 
 export {
-    SETCRIMES
+    SETCRIMES,
+    SETLOADING,
+    SETERROR
 }

@@ -6,7 +6,7 @@ import { Header } from '../../components';
 const background = require('../../assets/background.png');
 const animationData = require('../../assets/safe-city.json');
 
-function Home() {
+function Home(props: any) {
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -18,7 +18,7 @@ function Home() {
       
     return (
         <div className='HomePage' style={{backgroundImage: `url(${background})`}}>
-            <Header location={false} />
+            <Header props={props} location={false} active='Home' />
             <section>
                 <div className='SD1'>
                     <p className='sd_header'>Helping Nigerian citizens stay informed and <span>safe</span> </p>

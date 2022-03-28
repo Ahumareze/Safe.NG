@@ -1,26 +1,49 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Crime.css';
-
-import { Header } from '../../components';
+import { useDispatch, useSelector } from 'react-redux';
+import { Header, Loader } from '../../components';
 import Form from './components/Form';
 import CrimePost from './components/CrimePost';
 
+import * as actions from '../../redux/actions';
+
 const img = require('../../assets/img.jfif');
 
-function Crime() {
+function Crime(props: any) {
+    const dispatch = useDispatch();
+    const loading = useSelector((state: any) => state.loading);
+    const crimes = useSelector((state: any) => state.crimes);
+
+    useEffect(() => {
+        dispatch(actions.fetchCrimes('Lagos state'));
+        console.log(crimes)
+    }, []);
+
+    let view = (
+        <p>No crime in your area</p>
+    )
+    if(crimes){
+       view = (
+        <div className='cp_d1'>
+            {crimes?.map((i: any, idx: number) => {
+                <CrimePost 
+                    name={i.name} 
+                    date={i.date}
+                    time={i.time}
+                    content={i.content}
+                    img={i.img}
+                    key={idx}
+                />
+            })}
+        </div>
+       ) 
+    }
+
     return (
         <div className='CrimePage'>
-            <Header location />
+            <Header props={props} location active='Crimes' />
             <section>
-                <div className='cp_d1'>
-                    <CrimePost 
-                        name='Anonymous' 
-                        date='Mon 12 Jan 2022' 
-                        time='6:34pm' 
-                        content='Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe et, sint libero nihil recusandae aliquam cupiditate sit maxime magnam voluptas illum doloremque nobis enim animi voluptate. Odit praesentium vel ea error ex eveniet esse unde excepturi alias quasi enim minima facilis, sint illo inventore assumenda ut et tempore mollitia. Error.'
-                        img={img} 
-                    />
-                </div>
+                {!loading ? view : <Loader /> }
                 <div className='cp_d2'>
                     <Form />
                 </div>
