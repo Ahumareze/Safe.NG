@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 
+
+//Imported components
 import {FiChevronDown, FiChevronUp} from 'react-icons/fi';
 import { MdThumbUp } from 'react-icons/md';
-const img = require('../../../assets/img.jfif');
 
-function CrimePost() {
+interface CrimePostProps{
+    name: string,
+    date: string,
+    time: string,
+    content: string,
+    img: any,
+}
+
+const CrimePost:FC<CrimePostProps> = ({name, date, time, content, img}) => {
     const [readMore, setReadMore] = useState<string>();
 
     const toggle = (e: string) => {
@@ -19,13 +28,13 @@ function CrimePost() {
         <div className={`CrimePost ${readMore}`}>
 
             <div className='CrimePost_header'>
-                <p>Anounymous</p> <div className='cph_s' />
-                <p>Mon 12 Jan 2022</p> <div className='cph_s' />
-                <p>6:25pm</p>
+                <p>{name}</p> <div className='cph_s' />
+                <p>{date}</p> <div className='cph_s' />
+                <p>{time}</p>
             </div>
 
             <div className='CrimePost_container'>
-                <p>A truck full of cocaine was just comprehended along badagry express way by 5:00 pm. The suspect fled the scene leaving his truck full of cocaine. If you have any ...</p>
+                <p>{content}</p>
                 <div className='cc_img' style={{backgroundImage: `url(${img})`}} />
             </div>
 
