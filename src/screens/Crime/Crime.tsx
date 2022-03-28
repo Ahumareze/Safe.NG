@@ -16,7 +16,6 @@ function Crime(props: any) {
 
     useEffect(() => {
         dispatch(actions.fetchCrimes('Lagos state'));
-        console.log(crimes)
     }, []);
 
     let view = (
@@ -25,16 +24,17 @@ function Crime(props: any) {
     if(crimes){
        view = (
         <div className='cp_d1'>
-            {crimes?.map((i: any, idx: number) => {
+            {crimes?.map((i: any, idx: number) => (
                 <CrimePost 
                     name={i.name} 
                     date={i.date}
                     time={i.time}
                     content={i.content}
                     img={i.img}
+                    likes={i.likes}
                     key={idx}
                 />
-            })}
+            ))}
         </div>
        ) 
     }

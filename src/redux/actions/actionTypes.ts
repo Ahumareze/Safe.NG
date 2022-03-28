@@ -1,3 +1,4 @@
+const SETSAFEID = 'SETSAFEID'
 const SETCRIMES = 'SETCRIMES';
 const SETLOADING = 'SETLOADING';
 const SETERROR  = 'SETERROR';
@@ -5,5 +6,6 @@ const SETERROR  = 'SETERROR';
 export {
     SETCRIMES,
     SETLOADING,
-    SETERROR
+    SETERROR,
+    SETSAFEID
 }

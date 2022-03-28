@@ -11,10 +11,11 @@ interface CrimePostProps{
     date: string,
     time: string,
     content: string,
+    likes: Array<[]>,
     img: string,
 }
 
-const CrimePost:FC<CrimePostProps> = ({name, date, time, content, img}) => {
+const CrimePost:FC<CrimePostProps> = ({name, date, time, content, img, likes}) => {
     const [readMore, setReadMore] = useState<string>();
 
     let text;
@@ -49,7 +50,7 @@ const CrimePost:FC<CrimePostProps> = ({name, date, time, content, img}) => {
             </div>
 
             <div className='CrimePost_bottom'>
-                <LikeButton />
+                <LikeButton likes={likes} />
                 <div className='rmb_div'>
                     <div className='readMore_button' onClick={() => toggle('readMore')}>
                         {!readMore ? 

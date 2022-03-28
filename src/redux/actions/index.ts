@@ -1,5 +1,6 @@
-import { fetchCrimes } from "./actions";
+import { fetchCrimes, init } from "./actions";
 
 export {
-    fetchCrimes
+    fetchCrimes,
+    init
 }

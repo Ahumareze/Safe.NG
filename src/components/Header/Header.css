@@ -55,13 +55,12 @@
     color: #000;
 }
 .Location:hover{
-    background-color: #FF2365;
-    color: #fff;
+    background-color: #f0f0f0;
 }
 .Location p{
     margin: 0;
     font-size: 17px;
-    font-weight: 500;
+    /* font-weight: 500; */
 }
 .LocationPin{
     padding-right: 7px;

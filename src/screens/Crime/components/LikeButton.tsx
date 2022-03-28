@@ -1,18 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, FC, useEffect } from 'react';
 import { MdThumbUp } from 'react-icons/md';
+import { useSelector } from 'react-redux';
 
-function LikeButton() {
-    const [className, setClassName] = useState<string>('vote_container')
+interface LikeButtonProps{
+    likes: Array<[]>
+}
+
+const LikeButton:FC<LikeButtonProps> = ({likes}):JSX.Element => {
+    const safeId = useSelector((state: any) => state.safeId);
+    const [className, setClassName] = useState<string>();
+    
+    useEffect(() => {
+        if(likes.includes(safeId)){
+            setClassName('liked')
+        }
+    }, [safeId])
 
     const like = () => {
-        console.log('like');
         setClassName('liked')
     }
 
     return (
         <div className={`vote_container ${className}`} onClick={() => like()}>
             <MdThumbUp className='vote_container_icon' />
-            <p>20</p>
+            <p>{likes?.length}</p>
         </div>
     );
 }

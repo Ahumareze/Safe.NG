@@ -34,7 +34,7 @@ const data = [
         content: 'I am about to commt a crime, tell the popo to come catch me',
         img: img3,
         likes: [
-            'jfaflkdfjadlkfja',
+            'nwpz2p0002',
             'ruowrueoui29e',
             '49jfiosjfoifj-9',
             'ahfbhkafjdsf',
