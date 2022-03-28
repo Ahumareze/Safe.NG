@@ -15,6 +15,7 @@ function Crime(props: any) {
     const loading = useSelector((state: any) => state.loading);
     const crimes = useSelector((state: any) => state.crimes);
     const location = useSelector((state: any) => state.location);
+    const changeLocation = useSelector((state: any) => state.changeLocation);
 
     useEffect(() => {
         dispatch(actions.fetchCrimes(location));
@@ -50,8 +51,7 @@ function Crime(props: any) {
                     <Form />
                 </div>
             </section>
-            
-            {/* <Location /> */}
+            {changeLocation && <Location />}
         </div>
     );
 }
