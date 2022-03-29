@@ -1,6 +1,7 @@
 import * as actionTypes from './actionTypes';
 import data from '../../assets/testData';
 import axios from 'axios';
+import dbURL from '../../utilities/url';
 
 const init = () => {
     return (dispatch: any) => {
@@ -71,18 +72,21 @@ const fetchCrimes = (location: string) => {
 
 const postCrime = (image: any, content: string) => {
     return (dispatch: any) => {
+        //Runs check to see if all inputs are in place
         if(!content){
             dispatch(setErrorMessage('please fill out the description of the crime'))
         }else if(content.length < 20){
             dispatch(setErrorMessage('description too short'))
+        }else if(!image){
+            dispatch(setErrorMessage('please add an image for extra description'))
         }else{
-           
-            const formdata = new FormData();
-            // formdata.append('image', {uri: image, name: 'image.jpg', type: 'image/jpg'});
-            // formdata.append('content', content)
-
-            console.log(typeof(image))
-            axios.post('http://localhost:5000/upload', formdata)
+            //post data to server
+            const data = {
+                image,
+                content
+            };
+            
+            axios.post(dbURL + '/upload', data)
                 .then(r => {
                     console.log(r.data)
                 })

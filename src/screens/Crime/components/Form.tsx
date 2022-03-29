@@ -26,23 +26,23 @@ function Form() {
     }
 
     const handleSubmit = () => {
-        // dispatch(actions.postCrime(imgFile, content));
-        if(!image) return;
-        uploadImage(image)
+        dispatch(actions.postCrime(image, content));
+        // if(!image) return;
+        // uploadImage(image)
     };
 
-    const uploadImage = (base64EncodedImage: any) => {
-        const data = {
-            image: base64EncodedImage
-        }
-        axios.post('http://localhost:5000/upload', data)
-            .then(r => {
-                console.log(r.data)
-            })
-            .catch(e => {
-                console.log(e)
-            })
-    }
+    // const uploadImage = (base64EncodedImage: any) => {
+    //     const data = {
+    //         image: base64EncodedImage
+    //     }
+    //     axios.post('http://localhost:5000/upload', data)
+    //         .then(r => {
+    //             console.log(r.data)
+    //         })
+    //         .catch(e => {
+    //             console.log(e)
+    //         })
+    // }
 
     return (
         <div className='CrimePage_Form'>
