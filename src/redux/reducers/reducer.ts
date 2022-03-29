@@ -26,7 +26,9 @@ const reducer = (state = initialState, action: any) => {
         case actionTypes.CHANGELOACTION:
             return {...state, changeLocation: action.value};
         case actionTypes.SETPOSTLOADING:
-            return {...state, postLoading: action.value}
+            return {...state, postLoading: action.value};
+        case actionTypes.SETPOSTSUCCESS:
+            return {...state, postSuccess: action.value}
     }
     return state
 }
