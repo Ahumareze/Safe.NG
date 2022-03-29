@@ -84,16 +84,19 @@ const postCrime = (image: any, content: string) => {
             const data = {
                 image,
                 content,
-                date: new Date().toDateString()
+                date: new Date().toDateString(),
+                time: new Date().toLocaleTimeString()
             };
             
-            console.log('started')
+            dispatch(setLoading(true));
             axios.post(dbURL + '/upload', data)
                 .then(r => {
-                    console.log(r.data)
+                    console.log(r.data);
+                    dispatch(setLoading(false))
                 })
                 .catch(e => {
-                    console.log(e)
+                    console.log(e);
+                    dispatch(setLoading(false))
                 })
         }
     }
