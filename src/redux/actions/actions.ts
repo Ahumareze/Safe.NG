@@ -88,18 +88,26 @@ const postCrime = (image: any, content: string) => {
                 time: new Date().toLocaleTimeString(),
                 location: localStorage.getItem('@safeLocation')
             };
-            
-            dispatch(setLoading(true));
+            dispatch(setErrorMessage(''))
+            dispatch(setPostLoading(true));
             axios.post(dbURL + '/api/upload', data)
                 .then(r => {
                     console.log(r.data);
-                    dispatch(setLoading(false))
+                    dispatch(setPostLoading(false))
                 })
                 .catch(e => {
                     console.log(e);
-                    dispatch(setLoading(false))
+                    dispatch(setPostLoading(false));
+                    dispatch(setErrorMessage('Network error'))
                 })
         }
+    }
+};
+
+const setPostLoading = (value: boolean) => {
+    return{
+        type: actionTypes.SETPOSTLOADING,
+        value
     }
 }
 

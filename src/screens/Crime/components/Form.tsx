@@ -3,11 +3,13 @@ import React, { useEffect, useState } from 'react';
 
 import {MdCloudUpload} from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux';
+import { Loader } from '../../../components';
 import * as actions from '../../../redux/actions';
 
 function Form() {
     const dispatch = useDispatch();
     const errorMessage = useSelector((state: any) => state.errorMessage);
+    const postLoading = useSelector((state: any) => state.postLoading);
 
     const [image, setImage] = useState<any>();
     const [content, setContent] = useState<string>('');
@@ -27,24 +29,9 @@ function Form() {
 
     const handleSubmit = () => {
         dispatch(actions.postCrime(image, content));
-        // if(!image) return;
-        // uploadImage(image)
     };
 
-    // const uploadImage = (base64EncodedImage: any) => {
-    //     const data = {
-    //         image: base64EncodedImage
-    //     }
-    //     axios.post('http://localhost:5000/upload', data)
-    //         .then(r => {
-    //             console.log(r.data)
-    //         })
-    //         .catch(e => {
-    //             console.log(e)
-    //         })
-    // }
-
-    return (
+    const form = (
         <div className='CrimePage_Form'>
             <h3 className='cp_title'>Post a <span>crime update</span></h3>
             <textarea placeholder='write about a crime in your area ...' onChange={(e) => setContent(e.target.value)} />
@@ -58,11 +45,17 @@ function Form() {
                 </div>
                 {image && <div className='upPhotoImg' style={{backgroundImage: `url(${image})`}} /> }
             </div>
-            {errorMessage && <p className='errorMessage'>{errorMessage}</p>}
+            {errorMessage.length > 0 && <p className='errorMessage'>{errorMessage}</p>}
             <div className='post_update_button' onClick={() => handleSubmit()}>
                 Post update
             </div>
         </div>
+    )
+
+    return (
+        <>
+            {!postLoading ? form : <Loader /> }
+        </>
     );
 }
 
