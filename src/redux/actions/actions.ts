@@ -92,7 +92,7 @@ const postCrime = (image: any, content: string) => {
             dispatch(setPostLoading(true));
             axios.post(dbURL + '/api/upload', data)
                 .then(r => {
-                    console.log(r.data);
+                    dispatch(setPostSuccess(true));
                     dispatch(setPostLoading(false))
                 })
                 .catch(e => {
@@ -107,6 +107,13 @@ const postCrime = (image: any, content: string) => {
 const setPostLoading = (value: boolean) => {
     return{
         type: actionTypes.SETPOSTLOADING,
+        value
+    }
+}
+
+const setPostSuccess = (value: boolean) => {
+    return{
+        type: actionTypes.SETPOSTSUCCESS,
         value
     }
 }

@@ -7,7 +7,8 @@ const initialState = {
     postLoading: false,
     errorMessage: '',
     location: '',
-    changeLocation: false
+    changeLocation: false,
+    postSuccess: false
 };
 
 const reducer = (state = initialState, action: any) => {
