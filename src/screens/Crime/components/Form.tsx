@@ -10,8 +10,6 @@ function Form() {
     const errorMessage = useSelector((state: any) => state.errorMessage);
 
     const [image, setImage] = useState<any>();
-
-    const [imgFile, setImgFile] = useState<object>();
     const [content, setContent] = useState<string>('');
 
     const selectImage = (event: any) => {
