@@ -5,11 +5,13 @@ import {MdCloudUpload} from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux';
 import { Loader } from '../../../components';
 import * as actions from '../../../redux/actions';
+import Success from './Success';
 
 function Form() {
     const dispatch = useDispatch();
     const errorMessage = useSelector((state: any) => state.errorMessage);
     const postLoading = useSelector((state: any) => state.postLoading);
+    const postSuccess = useSelector((state: any) => state.postSuccess);
 
     const [image, setImage] = useState<any>();
     const [content, setContent] = useState<string>('');
@@ -31,7 +33,7 @@ function Form() {
         dispatch(actions.postCrime(image, content));
     };
 
-    const form = (
+    let form = (
         <div className='CrimePage_Form'>
             <h3 className='cp_title'>Post a <span>crime update</span></h3>
             <textarea placeholder='write about a crime in your area ...' onChange={(e) => setContent(e.target.value)} />
@@ -51,6 +53,9 @@ function Form() {
             </div>
         </div>
     )
+    if(postSuccess){
+        form = <Success />
+    }
 
     return (
         <>
