@@ -85,7 +85,8 @@ const postCrime = (image: any, content: string) => {
                 image,
                 content,
                 date: new Date().toDateString(),
-                time: new Date().toLocaleTimeString()
+                time: new Date().toLocaleTimeString(),
+                location: localStorage.getItem('@safeLocation')
             };
             
             dispatch(setLoading(true));
