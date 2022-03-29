@@ -17,6 +17,11 @@
     width: 100%;
     padding-left: 20px;
     box-sizing: border-box;
+    animation: slideIn 2s ease forwards;
+}
+@keyframes slideIn {
+    0%{transform: translateY(100px); opacity: 0;}
+    100%{transform: translateY(0); opacity: 1;}
 }
 .sd_header{
     width: 550px;
