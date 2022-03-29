@@ -78,8 +78,8 @@ const postCrime = (image: any, content: string) => {
         }else{
            
             const formdata = new FormData();
-            formdata.append('image', {uri: image, name: 'image.jpg', type: 'image/jpg'});
-            formdata.append('content', content)
+            // formdata.append('image', {uri: image, name: 'image.jpg', type: 'image/jpg'});
+            // formdata.append('content', content)
 
             console.log(typeof(image))
             axios.post('http://localhost:5000/upload', formdata)

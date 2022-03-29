@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 import {MdCloudUpload} from 'react-icons/md'
@@ -14,18 +15,35 @@ function Form() {
     const [content, setContent] = useState<string>('');
 
     const selectImage = (event: any) => {
-        if (event.target.files && event.target.files[0]) {
-            let reader = new FileReader();
-            reader.onload = (e) => {
-                setImage(e.target?.result);
-            };
-            reader.readAsDataURL(event.target.files[0]);
-            setImgFile(event.target.files[0]);
-          }
+        const file = event.target.files[0];
+        previewFile(file)
     };
 
-    const postUpdate = () => {
-        dispatch(actions.postCrime(imgFile, content))
+    const previewFile = (file: any) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+            setImage(reader.result)
+        }
+    }
+
+    const handleSubmit = () => {
+        // dispatch(actions.postCrime(imgFile, content));
+        if(!image) return;
+        uploadImage(image)
+    };
+
+    const uploadImage = (base64EncodedImage: any) => {
+        const data = {
+            image: base64EncodedImage
+        }
+        axios.post('http://localhost:5000/upload', data)
+            .then(r => {
+                console.log(r.data)
+            })
+            .catch(e => {
+                console.log(e)
+            })
     }
 
     return (
@@ -43,7 +61,7 @@ function Form() {
                 {image && <div className='upPhotoImg' style={{backgroundImage: `url(${image})`}} /> }
             </div>
             {errorMessage && <p className='errorMessage'>{errorMessage}</p>}
-            <div className='post_update_button' onClick={() => postUpdate()}>
+            <div className='post_update_button' onClick={() => handleSubmit()}>
                 Post update
             </div>
         </div>
