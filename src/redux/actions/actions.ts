@@ -89,7 +89,7 @@ const postCrime = (image: any, content: string) => {
             };
             
             dispatch(setLoading(true));
-            axios.post(dbURL + '/upload', data)
+            axios.post(dbURL + '/api/upload', data)
                 .then(r => {
                     console.log(r.data);
                     dispatch(setLoading(false))
