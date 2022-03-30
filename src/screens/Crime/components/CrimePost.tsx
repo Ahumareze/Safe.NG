@@ -45,8 +45,12 @@ const CrimePost:FC<CrimePostProps> = ({name, date, time, content, img, likes}) =
             </div>
 
             <div className='CrimePost_container'>
-                <p>{text}</p>
-                <div className='cc_img' style={{backgroundImage: `url(${img})`}} />
+                <div className='rmc'>
+                    <p>{text}</p>
+                </div>
+                <div className='rmi'>
+                    <div className='cc_img' style={{backgroundImage: `url(${img})`}} />
+                </div>
             </div>
 
             <div className='CrimePost_bottom'>
