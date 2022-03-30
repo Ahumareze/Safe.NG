@@ -7,6 +7,7 @@ import CrimePost from './components/CrimePost';
 
 import * as actions from '../../redux/actions';
 import Location from './components/Location';
+import SafeCity from './components/SafeCity';
 
 const img = require('../../assets/img.jfif');
 
@@ -18,13 +19,19 @@ function Crime(props: any) {
     const changeLocation = useSelector((state: any) => state.changeLocation);
 
     useEffect(() => {
-        dispatch(actions.fetchCrimes(location));
-    }, []);
+        fetchCrimes();
+    }, [location]);
+
+    const fetchCrimes = () => {
+        if(location){
+            dispatch(actions.fetchCrimes(location));
+        }
+    }
 
     let view = (
-        <p>No crime in your area</p>
+        <SafeCity />
     )
-    if(crimes){
+    if(crimes.length > 0){
        view = (
         <div className='cp_d1'>
             {crimes?.map((i: any, idx: number) => (

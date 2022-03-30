@@ -68,7 +68,7 @@ const fetchCrimes = (location: string) => {
         
         axios.post(dbURL + '/api/crimes', {location})
             .then(r => {
-                console.log(r.data)
+                console.log(r.data);
                 dispatch(setLoading(false));
                 dispatch(setCrimes(r.data))
             })

@@ -150,19 +150,11 @@
     display: grid;
     grid-template-columns: 1fr 200px;
 }
-.readMore .rmc {
-    width: 100%;
-    box-sizing: border-box;
-    background-color: red;
-}
-.readMore .rmi{
-    width: 100%;
-    background-color: black;
-}
 .readMore .CrimePost_container p{
     font-size: 16px;
     color: #000;
     margin: 0;
+    padding-right: 20px;
 }
 .CrimePost_container .cc_img{
     display: none;
@@ -170,7 +162,6 @@
 .readMore .CrimePost_container .cc_img{
     height: 200px;
     width: 200px;
-    background-color: pink;
     border-radius: 10px;
     background-position: center;
     background-repeat: no-repeat;
@@ -314,6 +305,7 @@ section:focus{
     font-size: 17px;
     font-weight: 500;
     margin-top: 40px;
+    cursor: pointer;
 }
 
 .PostSuccess{
@@ -333,4 +325,15 @@ section:focus{
     opacity: 0.5;
     margin: 0;
     margin-top: 7px;
+}
+.SafeCity{
+    padding-top: 50px;
+    width: 100%;
+    text-align: center;
+}
+.SafeCity p{
+    color: #000;
+    font-size: 24px;
+    font-weight: 500px;
+    margin: 0;
 }
