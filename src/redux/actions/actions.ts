@@ -69,7 +69,6 @@ const fetchCrimes = (location: string) => {
         
         axios.post(dbURL + '/api/crimes', {location})
             .then(r => {
-                console.log(r.data);
                 dispatch(setLoading(false));
                 dispatch(setCrimes(r.data))
             })
@@ -118,7 +117,17 @@ const postCrime = (image: any, content: string) => {
 
 const likePost = (id: string, safeId: string) => {
     return() => {
-        console.log(id, safeId)
+        const data = {
+            id,
+            safeId
+        }
+        axios.post(dbURL + '/api/like', data)
+            .then(r => {
+                console.log(r.data)
+            })
+            .catch(e => {
+                console.log(e)
+            })
     }
 }
 
