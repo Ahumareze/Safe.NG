@@ -326,14 +326,21 @@ section:focus{
     margin: 0;
     margin-top: 7px;
 }
-.SafeCity{
+.SafeCity, .ErrorScreen{
     padding-top: 50px;
     width: 100%;
     text-align: center;
 }
-.SafeCity p{
+.SafeCity p, .ErrorMainText{
     color: #000;
     font-size: 24px;
     font-weight: 500px;
     margin: 0;
+}
+
+.ErrorExtraText{
+    font-size: 18px;
+    margin: 0;
+    color: #000;
+    opacity: 0.5;
 }

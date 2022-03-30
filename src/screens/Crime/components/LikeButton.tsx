@@ -1,12 +1,15 @@
 import React, { useState, FC, useEffect } from 'react';
 import { MdThumbUp } from 'react-icons/md';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import * as actions from '../../../redux/actions';
 
 interface LikeButtonProps{
-    likes: Array<[]>
+    likes: Array<[]>,
+    id: string
 }
 
-const LikeButton:FC<LikeButtonProps> = ({likes}):JSX.Element => {
+const LikeButton:FC<LikeButtonProps> = ({likes, id}):JSX.Element => {
+    const dispatch= useDispatch();
     const safeId = useSelector((state: any) => state.safeId);
     const [className, setClassName] = useState<string>();
     
@@ -17,7 +20,10 @@ const LikeButton:FC<LikeButtonProps> = ({likes}):JSX.Element => {
     }, [safeId])
 
     const like = () => {
-        setClassName('liked')
+        if(!className){
+            setClassName('liked');
+            dispatch(actions.likePost(id, safeId))
+        }
     }
 
     return (

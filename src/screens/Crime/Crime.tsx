@@ -8,6 +8,7 @@ import CrimePost from './components/CrimePost';
 import * as actions from '../../redux/actions';
 import Location from './components/Location';
 import SafeCity from './components/SafeCity';
+import ErrorScreen from './components/ErrorScreen';
 
 const img = require('../../assets/img.jfif');
 
@@ -17,6 +18,7 @@ function Crime(props: any) {
     const crimes = useSelector((state: any) => state.crimes);
     const location = useSelector((state: any) => state.location);
     const changeLocation = useSelector((state: any) => state.changeLocation);
+    const errorScreen = useSelector((state: any) => state.errorScreen);
 
     useEffect(() => {
         fetchCrimes();
@@ -36,17 +38,20 @@ function Crime(props: any) {
         <div className='cp_d1'>
             {crimes?.map((i: any, idx: number) => (
                 <CrimePost 
+                    id={i._id}
                     name={i.name} 
                     date={i.date}
                     time={i.time}
                     content={i.content}
                     img={i.image}
                     likes={i.likes}
-                    key={idx}
+                    key={i._id}
                 />
             ))}
         </div>
        ) 
+    }else if(errorScreen){
+        view = <ErrorScreen />
     }
 
     return (

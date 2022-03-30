@@ -65,6 +65,7 @@ const changeLocation = (value: boolean) => {
 const fetchCrimes = (location: string) => {
     return(dispatch: any) => {
         dispatch(setLoading(true));
+        dispatch(setError(false))
         
         axios.post(dbURL + '/api/crimes', {location})
             .then(r => {
@@ -73,7 +74,8 @@ const fetchCrimes = (location: string) => {
                 dispatch(setCrimes(r.data))
             })
             .catch(e => {
-                dispatch(setLoading(false))
+                dispatch(setLoading(false));
+                dispatch(setError(true))
                 console.log(e)
             })
     }
@@ -114,9 +116,22 @@ const postCrime = (image: any, content: string) => {
     }
 };
 
+const likePost = (id: string, safeId: string) => {
+    return() => {
+        console.log(id, safeId)
+    }
+}
+
 const setPostLoading = (value: boolean) => {
     return{
         type: actionTypes.SETPOSTLOADING,
+        value
+    }
+};
+
+const setError = (value: boolean) => {
+    return{
+        type: actionTypes.SETERROR,
         value
     }
 }
@@ -154,5 +169,6 @@ export {
     init,
     postCrime,
     changeLocation,
-    updateLocation
+    updateLocation,
+    likePost
 }

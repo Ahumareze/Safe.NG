@@ -8,7 +8,8 @@ const initialState = {
     errorMessage: '',
     location: '',
     changeLocation: false,
-    postSuccess: false
+    postSuccess: false,
+    errorScreen: false
 };
 
 const reducer = (state = initialState, action: any) => {
@@ -28,7 +29,9 @@ const reducer = (state = initialState, action: any) => {
         case actionTypes.SETPOSTLOADING:
             return {...state, postLoading: action.value};
         case actionTypes.SETPOSTSUCCESS:
-            return {...state, postSuccess: action.value}
+            return {...state, postSuccess: action.value};
+        case actionTypes.SETERROR:
+            return {...state, errorScreen: action.value}
     }
     return state
 }

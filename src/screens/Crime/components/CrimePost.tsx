@@ -7,6 +7,7 @@ import LikeButton from './LikeButton';
 
 
 interface CrimePostProps{
+    id: string,
     name: string,
     date: string,
     time: string,
@@ -15,7 +16,7 @@ interface CrimePostProps{
     img: string,
 }
 
-const CrimePost:FC<CrimePostProps> = ({name, date, time, content, img, likes}) => {
+const CrimePost:FC<CrimePostProps> = ({id, name, date, time, content, img, likes}) => {
     const [readMore, setReadMore] = useState<string>();
 
     let text;
@@ -50,7 +51,7 @@ const CrimePost:FC<CrimePostProps> = ({name, date, time, content, img, likes}) =
             </div>
 
             <div className='CrimePost_bottom'>
-                <LikeButton likes={likes} />
+                <LikeButton id={id} likes={likes} />
                 <div className='rmb_div'>
                     <div className='readMore_button' onClick={() => toggle('readMore')}>
                         {!readMore ? 
