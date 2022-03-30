@@ -33,7 +33,7 @@ function Crime(props: any) {
                     date={i.date}
                     time={i.time}
                     content={i.content}
-                    img={i.img}
+                    img={i.image}
                     likes={i.likes}
                     key={idx}
                 />

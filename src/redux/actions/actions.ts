@@ -65,8 +65,17 @@ const changeLocation = (value: boolean) => {
 const fetchCrimes = (location: string) => {
     return(dispatch: any) => {
         dispatch(setLoading(true));
-        dispatch(setCrimes(data));
-        dispatch(setLoading(false));
+        
+        axios.post(dbURL + '/api/crimes', {location})
+            .then(r => {
+                console.log(r.data)
+                dispatch(setLoading(false));
+                dispatch(setCrimes(r.data))
+            })
+            .catch(e => {
+                dispatch(setLoading(false))
+                console.log(e)
+            })
     }
 };
 
@@ -86,7 +95,8 @@ const postCrime = (image: any, content: string) => {
                 content,
                 date: new Date().toDateString(),
                 time: new Date().toLocaleTimeString(),
-                location: localStorage.getItem('@safeLocation')
+                location: localStorage.getItem('@safeLocation'),
+                likes: []
             };
             dispatch(setErrorMessage(''))
             dispatch(setPostLoading(true));
