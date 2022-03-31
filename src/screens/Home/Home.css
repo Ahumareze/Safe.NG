@@ -40,3 +40,36 @@
     color: #000;
     opacity: 0.5;
 }
+.sd_box{
+    height: 200px;
+    width: 400px;
+    margin-top: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 7px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns: 120px 1fr;
+}
+.sd_details{
+    width: 100%;
+    padding: 10px 10px;
+    box-sizing: border-box;
+}
+.sd_award_title{
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+}
+.sd_award_main{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 10px;
+}
+.sd_award_main p{
+    font-size: 16px;
+    margin: 0;
+    opacity: 0.9;
+}
+.sd_award_main span{
+    font-weight: bold;
+}
