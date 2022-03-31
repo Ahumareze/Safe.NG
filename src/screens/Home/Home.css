@@ -73,3 +73,13 @@
 .sd_award_main span{
     font-weight: bold;
 }
+.sd_imgContainer{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.sd_imgContainer img{
+    height: 70px;
+}

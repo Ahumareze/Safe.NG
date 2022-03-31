@@ -1,10 +1,14 @@
 import React from 'react';
 import './Home.css';
 import Lottie from 'react-lottie';
+
+//Imported components
 import { Header } from '../../components';
 
+//Imported utilities
 const background = require('../../assets/background.png');
 const animationData = require('../../assets/safe-city.json');
+const ribbon = require('../../assets/ribbon.png');
 
 function Home(props: any) {
     const defaultOptions = {
@@ -24,7 +28,9 @@ function Home(props: any) {
                     <p className='sd_header'>Helping Nigerian citizens stay informed and <span>safe</span> </p>
                     <p className='sd_main'>Connect and live more safely. Safe is a personal safety network that empowers you to protect yourself and the people and places you care about.</p>
                     <div className='sd_box'>
-                        <div />
+                        <div className='sd_imgContainer'>
+                            <img src={ribbon} />
+                        </div>
                         <div className='sd_details'>
                             <p className='sd_award_title'>Vanguard App of the year</p>
                             <div className='sd_award_main'>

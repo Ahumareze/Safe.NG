@@ -1,16 +1,18 @@
 import React, { useEffect } from 'react';
 import './Crime.css';
 import { useDispatch, useSelector } from 'react-redux';
+
+//Imported components
 import { Header, Loader } from '../../components';
 import Form from './components/Form';
 import CrimePost from './components/CrimePost';
-
-import * as actions from '../../redux/actions';
 import Location from './components/Location';
 import SafeCity from './components/SafeCity';
 import ErrorScreen from './components/ErrorScreen';
 
-const img = require('../../assets/img.jfif');
+//Imported utilities
+import * as actions from '../../redux/actions';
+
 
 function Crime(props: any) {
     const dispatch = useDispatch();

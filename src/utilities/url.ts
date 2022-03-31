@@ -1,3 +1,3 @@
-const dbURL = 'http://localhost:5000';
+const dbURL = 'https://safeng.herokuapp.com';
 
 export default dbURL;

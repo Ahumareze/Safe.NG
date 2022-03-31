@@ -1,5 +1,4 @@
 import * as actionTypes from './actionTypes';
-import data from '../../assets/testData';
 import axios from 'axios';
 import dbURL from '../../utilities/url';
 

@@ -1,6 +1,8 @@
 import React, { useState, FC, useEffect } from 'react';
 import { MdThumbUp } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
+
+//Imported components
 import * as actions from '../../../redux/actions';
 
 interface LikeButtonProps{

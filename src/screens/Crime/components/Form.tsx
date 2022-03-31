@@ -1,11 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-
 import {MdCloudUpload} from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux';
+
+//Imported components
 import { Loader } from '../../../components';
-import * as actions from '../../../redux/actions';
 import Success from './Success';
+
+//Imported utilities
+import * as actions from '../../../redux/actions';
 
 function Form() {
     const dispatch = useDispatch();

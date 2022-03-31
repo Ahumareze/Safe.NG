@@ -1,6 +1,5 @@
 import React, { FC, useState } from 'react';
 
-
 //Imported components
 import {FiChevronDown, FiChevronUp} from 'react-icons/fi';
 import LikeButton from './LikeButton';

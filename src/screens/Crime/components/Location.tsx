@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-
-//Imported utilities
+import { useDispatch, useSelector } from 'react-redux';
 import { FiX } from 'react-icons/fi';
 import { MdLocationPin } from 'react-icons/md';
+
+//Imported utilities
 import states from '../../../utilities/states';
 import * as actions from '../../../redux/actions';
-import { useDispatch, useSelector } from 'react-redux';
+
 
 function Location() {
     const dispatch = useDispatch();
