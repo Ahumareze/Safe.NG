@@ -15,7 +15,7 @@
     height: 100%;
     width: 100%;
     overflow-y: scroll;
-    padding-bottom: 20px;
+    padding-top: 20px;
 }
 .cp_d2{
     height: 100%;
@@ -114,7 +114,7 @@
     background-color: #fff;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 20px;
+    margin-bottom: 30px;
     padding: 0 15px;
     box-sizing: border-box;
     overflow: hidden;
